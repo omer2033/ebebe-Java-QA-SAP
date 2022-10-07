@@ -31,7 +31,7 @@ public class Employee {
     public void raiseSalary(){
         int currentYear = 2021;
         int totalWorkYear = currentYear - this.hireYear;
-        double extraAmount =  bonus() + tax();
+        double extraAmount =  bonus() ;
 
         if (totalWorkYear < 10)
             this.salary += (this.salary * 0.05);
@@ -41,6 +41,8 @@ public class Employee {
 
         else if (totalWorkYear > 19)
             this.salary += (this.salary*0.15);
+        
+        extraAmount -= tax();
 
         this.salary += extraAmount;
     }
